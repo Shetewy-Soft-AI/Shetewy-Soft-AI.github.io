@@ -151,7 +151,7 @@ function watch(n){
   ta.oninput=function(){clearTimeout(to);to=setTimeout(function(){var all=LS.get("notes",{});all[cur.n]=ta.value;$("#saved").textContent=LS.set("notes",all)?"اتحفظت ✓":"مقدرناش نحفظ على المتصفح ده"},400)};
   $("#doneBtn").onclick=function(){var dd=done();if(dd[cur.n])delete dd[cur.n];else dd[cur.n]=true;LS.set("done",dd);watch(cur.n)};
   $("#exp").onclick=function(){var data={v:1,notes:LS.get("notes",{}),done:done(),last:LS.get("last",null)};var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:"application/json"}));a.download="shetewy-progress.json";a.click()};
-  $("#imp").onchange=function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var o=JSON.parse(r.result);LS.set("notes",o.notes||{});LS.set("done",o.done||{});if(o.last)LS.set("last",o.last);watch(cur.n)}catch(x){$("#saved").textContent="الملف مش صالح"}};r.readAsText(f)};
+  $("#imp").onchange=function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var o=JSON.parse(r.result);LS.set("notes",o.notes||{});LS.set("done",o.done||{});if(o.last&&o.last.n)LS.set("last",o.last);var tn=o.last&&o.last.n?o.last.n:cur.n;skipSave=true;if(location.hash==="#/watch/"+tn)watch(tn);else location.hash="#/watch/"+tn}catch(x){$("#saved").textContent="الملف مش صالح"}};r.readAsText(f)};
   if(!cur.vid)return;
   if(!LS.get("last",null)||LS.get("last").n!==cur.n)LS.set("last",{n:cur.n,t:0});
   if(startAt>5)$("#resumeNote").textContent="هنكمّل من "+fmt(startAt);
@@ -168,7 +168,8 @@ function watch(n){
 }
 
 /* ---------- router ---------- */
-function saveNow(){try{if(ytPlayer&&ytPlayer.getCurrentTime&&curVid!=null&&[1,2,3].indexOf(ytPlayer.getPlayerState())>-1){var t=ytPlayer.getCurrentTime();if(t>1)LS.set("last",{n:curVid,t:t})}}catch(e){}}
+var skipSave=false;
+function saveNow(){if(skipSave){skipSave=false;return}try{if(ytPlayer&&ytPlayer.getCurrentTime&&curVid!=null&&[1,2,3].indexOf(ytPlayer.getPlayerState())>-1){var t=ytPlayer.getCurrentTime();if(t>1)LS.set("last",{n:curVid,t:t})}}catch(e){}}
 function route(){
   saveNow();curVid=null;clearInterval(tick);
   var h=(location.hash||"#/").replace(/^#\/?/,""), p=h.split("/"), r=p[0]||"home";
