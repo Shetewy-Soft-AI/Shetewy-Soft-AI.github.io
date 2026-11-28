@@ -76,10 +76,10 @@ function home(){
   }
   app.innerHTML =
    '<section class="hero2"><div class="h-text"><h1>اتعلّم مهارات تقنية تبني بيها أفكارك</h1><p>كورسات عملية في البرمجة والذكاء الاصطناعي ومجالات تقنية تانية، من الصفر وبخطوات واضحة.</p></div>'+
-   '<a class="preview" href="#/watch/1" aria-label="ابدأ الدرس الأول"><img src="'+thumb+'" alt="الدرس الأول: يعني إيه برمجة؟"><span class="pv-meta"><b dir="ltr">Python From Zero</b><small>الدرس 1 · يعني إيه برمجة؟</small></span></a>'+
+   '<a class="preview" href="#/watch/1" aria-label="ابدأ الدرس الأول"><img src="'+thumb+'" alt="الدرس الأول: يعني إيه برمجة؟"><span class="pv-meta"><b>أساسيات البرمجة | Programming Fundamentals</b><small>الدرس 1 · يعني إيه برمجة؟</small></span></a>'+
    '<div class="row h-cta">'+cta+'<a class="btn ghost" href="#courses">استكشف الكورسات</a></div></section>'+
    '<h2 id="courses" class="sh">الكورسات</h2><p class="lead">الكورس الأول متاح الآن، والمزيد قريبًا.</p><div class="courses">'+
-   '<article class="card course"><span class="tag live">متاح الآن</span><h3 dir="ltr" style="text-align:right">Python From Zero</h3><p>من أساسيات البرمجة وحل المشكلات لحد أساسيات Python والمشروع الصغير.</p><ul class="meta"><li><b>المستوى:</b> مبتدئ، من الصفر</li><li><b>الدروس:</b> 35 في مرحلتين</li><li><b>الحالة:</b> '+avail+' دروس متاحة، والباقي بيتنزل تباعًا</li></ul><div class="row"><a class="btn" href="#/watch/'+(canResume?l.n:1)+'">'+(canResume?'تابع من حيث توقفت':'ابدأ التعلّم')+'</a><a class="btn ghost" href="#/curriculum">شوف الدروس</a></div></article>'+
+   '<article class="card course"><span class="tag live">متاح الآن</span><h3 style="text-align:right">أساسيات البرمجة | Programming Fundamentals</h3><p>من أساسيات البرمجة وحل المشكلات لحد أساسيات Python والمشروع الصغير.</p><ul class="meta"><li><b>المستوى:</b> مبتدئ، من الصفر</li><li><b>الدروس:</b> 35 في مرحلتين</li><li><b>الحالة:</b> '+avail+' دروس متاحة، والباقي بيتنزل تباعًا</li></ul><div class="row"><a class="btn" href="#/watch/'+(canResume?l.n:1)+'">'+(canResume?'تابع من حيث توقفت':'ابدأ التعلّم')+'</a><a class="btn ghost" href="#/curriculum">شوف الدروس</a></div></article>'+
    '<article class="card course dim"><span class="tag soon">قادم · مفيش موعد محدد</span><h3>ما بعد الأساسيات</h3><p>OOP وأنماط التصميم. المحتوى لسه مش متاح.</p></article></div>'+
    panel+
    '<div class="feats">'+
