@@ -2,7 +2,7 @@
 var CHANNEL = "https://www.youtube.com/channel/UCXvUgmgFQgakKkluR7Dvdwg";
 var GITHUB = "https://github.com/Shetewy-Soft-AI";
 var COURSE_REPO = "https://github.com/Shetewy-Soft-AI/shetewy-programming-course";
-var LESSON_DIRS = {1:"01-what-is-programming",2:"02-problem-solving",3:"03-algorithm",4:"04-flowchart",5:"05-pseudocode"};
+var LESSON_DIRS = {1:"01-what-is-programming",2:"02-problem-solving",3:"03-algorithm",4:"04-flowchart",5:"05-pseudocode",6:"06-programming-languages"};
 var SECTIONS = [
   {id:"fund", name:"المرحلة 1", en:"Programming Fundamentals", desc:"10 دروس: إزاي الكمبيوتر بينفذ التعليمات، وإزاي نفكر في حل المشكلات قبل ما نكتب كود."},
   {id:"py", name:"المرحلة 2", en:"Python Basics", desc:"25 درس: أول كود حقيقي، المتغيرات والشروط والتكرار والدوال، وتمارين ومشروع صغير."},
@@ -14,7 +14,7 @@ var LESSONS = [
   {n:3, sec:"fund", title:"الخوارزمية (Algorithm)", sub:"Algorithm", vid:"K-OFADwP4X0"},
   {n:4, sec:"fund", title:"Flowchart", sub:"Flowchart", vid:"K_OvxoXEeGk"},
   {n:5, sec:"fund", title:"Pseudocode", sub:"Pseudocode", vid:"qIZgCwMRMjI"},
-  {n:6, sec:"fund", title:"Programming Languages & Source Code", sub:"Programming Languages & Source Code", vid:null},
+  {n:6, sec:"fund", title:"Programming Languages & Source Code", sub:"Programming Languages & Source Code", vid:"nDNcmwz5jqo"},
   {n:7, sec:"fund", title:"Compiler vs Interpreter + Why Python", sub:"Compiler vs Interpreter + Why Python", vid:null},
   {n:8, sec:"fund", title:"Variables & Data Types (Concept)", sub:"Variables & Data Types (Concept)", vid:null},
   {n:9, sec:"fund", title:"Operators & Conditions (Concept)", sub:"Operators & Conditions (Concept)", vid:null},
